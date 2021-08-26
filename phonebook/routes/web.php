@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('dashboard');
-});
+
 Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
     Route::get('/dashboard', [\App\Http\Controllers\ContactController::class, 'index'])->name('dashboard');
     Route::post('/dashboard', [\App\Http\Controllers\ContactController::class, 'store']);
     Route::post('/share', [\App\Http\Controllers\SharedContactController::class, 'share']);

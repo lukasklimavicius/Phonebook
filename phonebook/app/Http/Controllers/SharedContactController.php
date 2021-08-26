@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+
 class SharedContactController extends Controller
 {
+
     public function share(Request $request)
     {
-
+        $request->validate([
+            'email' => 'required|email',
+        ]);
         // check if it's not already shared
 
         $user = DB::table('users')->select('id', 'name')->where('email', '=', $request->email)->first();
@@ -32,16 +36,10 @@ class SharedContactController extends Controller
     public function sharedByMe()
     {
 
-//        $sharedByMe = DB::table('contacts')
-//            ->join('shared_contacts', 'contacts.id', 'shared_contacts.contact_id')
-//            ->where('owner_id', Auth::id())
-//            ->get();
-
         $sharedByMe = DB::table('users')
             ->join('shared_contacts', 'users.id', 'shared_contacts.viewer_id')
             ->join('contacts', 'contacts.id', 'shared_contacts.contact_id')
             ->where('owner_id', Auth::id())
-//            ->where('users.id','>' ,0)
             ->get();
 
 

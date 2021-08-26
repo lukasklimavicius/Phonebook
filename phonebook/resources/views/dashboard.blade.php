@@ -87,13 +87,13 @@
                                         @csrf
                                         <div class="mb-3">
                                             <label for="addInputEmail1" class="form-label">Name</label>
-                                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                                            <input type="text" name="contact_name" class="form-control" id="exampleInputEmail1"
                                                    aria-describedby="emailHelp" maxlength="70">
 
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                                            <input type="text" name="phone_number" class="form-control"
+                                            <input type="text" name="contact_phone_number" class="form-control"
                                                    id="exampleInputPassword1" maxlength="30">
                                         </div>
 
@@ -125,12 +125,12 @@
                                         <input type="hidden" name="id" id="contactID">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Name</label>
-                                            <input type="text" name="name" id="editName" class="form-control"
+                                            <input type="text" name="contact_name" id="editName" class="form-control"
                                                    aria-describedby="emailHelp" maxlength="70">
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleInputPassword1" class="form-label">Phone number</label>
-                                            <input type="text" name="phone_number" id="editPhoneNumber"
+                                            <input type="text" name="contact_phone_number" id="editPhoneNumber"
                                                    class="form-control" maxlength="30">
                                         </div>
 
